@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft_full/inc/get_next_line.h"
 
 //	locate the first occurence c in the string,
 //	in this case a check for '\n' inside the buffer!!!!

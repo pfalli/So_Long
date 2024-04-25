@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft_full/inc/get_next_line.h"
 
 char	*fill_line_buffer(int fd, char *left_c, char *buffer);
 char	*set_line(char *line);
