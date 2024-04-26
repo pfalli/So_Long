@@ -23,16 +23,14 @@
 #include <mlx.h>
 #include "libft_full/inc/get_next_line.h"
 
-# define MAP_SIZE 100
 # define ESC 65307
 # define W 119
 # define A 97
 # define S 115
 # define D 100
 # define TS 64
-# define WIN_SIZE_X 1000
-# define WIN_SIZE_Y 400
 # define SIZE 40
+# define MAP_PATH "map/nopath.ber"
 
 typedef struct s_player {
     int         pos_x;
@@ -64,17 +62,20 @@ typedef struct	s_data {
 	void 		*mlx;
 	void 		*win;
     void        *img;
-    int         bits_per_pixel;
-    int         line_length;
-    int         endian;
     char        *addr;
     t_player    player;
-    t_texture   texture;
-    t_map       map;
+    t_map       map; // it works only with integers. didn't work with textures
     char        **map_twoD;
-    bool        won;
-    int         point_x;
-    int         point_y;
+    void        *actor;
+    void        *exit;
+    void        *collectible;
+    void        *wall;
+    void        *floor;
+    int         won;
+    char        **visited;
+    int         exit_accessible;
+    int         collectible_accessible;
+    int         collectible_count;
 }				t_data;
 
 
