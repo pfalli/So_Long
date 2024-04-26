@@ -15,6 +15,8 @@
 // TO DO
 // what if inside the map there is another number not handled? example 9 2 5 or letters
 // what if map is empty?
+// count moves
+// exit_unlocked?
 
 int close_window(t_data *data)
 {
