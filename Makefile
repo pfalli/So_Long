@@ -1,9 +1,5 @@
 NAME = so_long
 
-INC = ./inc/
-LIBFT = ./libft_full/libft.a
-LIBFT_PATH = ./libft_full
-
 SRC =$(addprefix src/, so_long.c \
 								utils_controls.c \
 								utils_draw.c \
@@ -12,32 +8,22 @@ SRC =$(addprefix src/, so_long.c \
 								utils_mapcheck.c \
 								utils.c )
 
-OBJ = $(SRC:.c=.o)
+CC = cc
+CCFLAGS = -Wall -Werror -Wextra -g 
+MLX_FLAGS = -L/usr/X11/lib -lX11 -lXext -lm
 
-CC = gcc
-CCFLAGS = -Wall -Werror -Wextra -g -I$(INC)
-MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
-
-MLX_DIR = ./minilibx
-MLX = ./minilibx/libmlx.a
+LIBFT = ./libft_full/libft.a
+LIBFT_PATH = ./libft_full
+MLX_DIR = ./minilibx-linux
+MLX = ./minilibx-linux/libmlx.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME):
+	@make -C $(MLX_DIR)
 	@make -C $(LIBFT_PATH)
-	$(CC) $(CCFLAGS) $(MLX_FLAGS)  -o $(NAME) $(SRC) $(LIBFT) $(MLX)
+	$(CC) $(CCFLAGS) $(MLX_FLAGS) -o $(NAME) $(SRC) $(LIBFT) $(MLX)
 # now libft works
-
-$(OBJ): $(SRC)
-	@mkdir -p $(@D)
-	$(CC) -c $(CCFLAGS) -o $@ $<
-# now  the .o files are inside src
-
-start:
-	make all
-
-libft:
-	make -C $(LIBFT_PATH)
 
 clean:
 	rm -f $(OBJ)
@@ -50,5 +36,5 @@ fclean: clean
 re : fclean all
 
 # gcc so_long.c -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
-# gcc -Wall -Wextra -Werror -g so_long.c -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
+# gcc -Wall -Wextra -Werror -g so_long.c -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11  " ON MY LAPTOP"
 # valgrind --leak-check=full --show-leak-kinds=all

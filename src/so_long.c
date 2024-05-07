@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   xxx.c                                              :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:20:06 by pfalli            #+#    #+#             */
-/*   Updated: 2024/04/23 10:20:06 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:02:30 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
+
+// TO DO:
+// after exit count moves
+// count moves of any keyboard clicked
+// count moves after the wall DONE
 
 int main(void)
 {

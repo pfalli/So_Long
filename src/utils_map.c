@@ -6,11 +6,11 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:21:49 by pfalli            #+#    #+#             */
-/*   Updated: 2024/04/27 16:21:49 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 13:07:22 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 int load_texture(t_data *data) // function for texture
 {

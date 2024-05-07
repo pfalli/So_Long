@@ -6,11 +6,11 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:59:34 by pfalli            #+#    #+#             */
-/*   Updated: 2024/04/18 10:59:34 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:45:09 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 
 int line_length (char *str)
@@ -46,7 +46,7 @@ int init_data(t_data *data)
     data->collectible_count = 0;
     data->exit_accessible = 0;
     data->collectible_accessible = 0;
-    data->moves = 0;
+    data->moves = -1;
     data->exit_unlocked = 0;
     data->collectible_collected = 0;
     while (y < data->map.height)
@@ -62,6 +62,15 @@ int init_data(t_data *data)
             x++;
         }
         y++;
+    }
+    return(0);
+}
+
+int draw_win(t_data *data)
+{
+    if(data->won == 1)
+    {
+        mlx_put_image_to_window(data->mlx, data->win, data->victory, 3*SIZE, 3*SIZE);
     }
     return(0);
 }

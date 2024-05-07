@@ -6,11 +6,11 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:09:36 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/03 11:09:36 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:46:37 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 int draw_wall_floor(t_data *data)
 {
@@ -62,16 +62,15 @@ int draw_all_map(t_data *data)
     draw_wall_floor(data);
     draw_others(data);
     draw_player(data);
-    if(data->won == 1)
-    {
-        printf("YOU ARE THE WINNER!\n");
-        mlx_put_image_to_window(data->mlx, data->win, data->victory, 2*SIZE, 2*SIZE);
-    }
+    draw_win(data);
+    // mlx_loop_hook(data->mlx, draw_win, (void *)data);
     return(0);
 }
 
 int move_player(t_data *data) // IMPORTANT : first Y then x
 {
+    if (data->won == 1)
+        return(0);
     if(data->map_twoD[data->player.pos_y][data->player.pos_x] == 'C')
     {
         data->map_twoD[data->player.pos_y][data->player.pos_x] = '0';
@@ -93,6 +92,7 @@ int move_player(t_data *data) // IMPORTANT : first Y then x
         }
     }
     data->moves++;
+    printf("Moves: %d\n", data->moves);
     draw_all_map(data);
     return(0);
 }

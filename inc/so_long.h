@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:40:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/04/17 11:40:32 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:44:40 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "../libft_full/inc/get_next_line.h"
 #include "../libft_full/inc/ft_printf.h"
 #include "../libft_full/inc/get_next_line.h"
-#include "../minilibx/mlx.h"
+#include "../minilibx-linux/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -105,8 +105,8 @@ void free_images(t_data *data);
 
 // Map check
 int closed_by_walls(t_data *data);
-int only_1_E(t_data *data);
-int only_1_P(t_data *data);
+void only_1_E(t_data *data);
+void only_1_P(t_data *data);
 int atleast_1_C(t_data *data);
 void is_exit_accessible(t_data *data, int x, int y);
 int allocate_visited(t_data *data);
@@ -118,5 +118,7 @@ int check_map_errors(t_data *data);
 int close_window(t_data *data);
 int how_many_lines(char *str);
 int line_length (char *str);
+
+int draw_win(t_data *data);
 
 #endif

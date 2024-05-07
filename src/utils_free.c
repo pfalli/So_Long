@@ -6,11 +6,11 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:10:18 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/03 11:10:18 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 13:07:19 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void free_map(t_data *data)
 {

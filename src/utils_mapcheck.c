@@ -6,11 +6,11 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:23:03 by pfalli            #+#    #+#             */
-/*   Updated: 2024/04/27 16:23:03 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/07 14:13:49 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 int closed_by_walls(t_data *data) // IMPORTANT  if I use map.height or width for the index NO - 1 / as a x y coordinate YES
 {
@@ -37,7 +37,7 @@ int closed_by_walls(t_data *data) // IMPORTANT  if I use map.height or width for
     return(0);
 }
 
-int only_1_E(t_data *data)
+void only_1_E(t_data *data)
 {
     int y = 0;
     int flag = 0;
@@ -64,10 +64,9 @@ int only_1_E(t_data *data)
             exit(EXIT_FAILURE);
         }
     }
-    return(0);
 }
 
-int only_1_P(t_data *data)
+void only_1_P(t_data *data)
 {
     int y = 0;
     int flag = 0;
@@ -94,7 +93,6 @@ int only_1_P(t_data *data)
             exit(EXIT_FAILURE);
         }
     }
-    return(0);
 }
 
 int atleast_1_C(t_data *data)
