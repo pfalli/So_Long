@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:59:34 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 11:32:51 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 13:15:39 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	line_length(char *str)
 
 int	how_many_lines(char *str)
 {
-	int		fd;
-	int		lines;
+	int	fd;
+	int	lines;
 
 	fd = open(MAP_PATH, O_RDONLY);
 	if (fd < 0)
@@ -79,8 +79,8 @@ int	draw_win(t_data *data)
 {
 	if (data->won == 1)
 	{
-		mlx_put_image_to_window(data->mlx, data->win, data->victory, 3 * SIZE, 3
-			* SIZE);
+		mlx_put_image_to_window(data->mlx, data->win, data->victory,
+			data->map.height / 2 * SIZE, data->map.width / 2 * SIZE);
 	}
 	return (0);
 }
