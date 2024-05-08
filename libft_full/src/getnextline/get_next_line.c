@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:13:18 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 10:54:17 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 15:53:40 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*fill_line_buffer(int fd, char *left_c, char *buffer)
 			break ;
 		buffer[c_read] = 0;
 		if (!left_c)
-			left_c = ft_strdup("");
+			left_c = ft_strdup_gnl("");
 		temp = left_c;
 		left_c = ft_strjoin(temp, buffer);
 		free(temp);
@@ -81,7 +81,7 @@ char	*set_line(char *line)
 		i++;
 	if (line[i] == 0)
 		return (0);
-	left_c = ft_substr(line, i + 1, ft_strlen(line) - i);
+	left_c = ft_substr(line, i + 1, ft_strlen_gnl(line) - i);
 	if (*left_c == 0)
 	{
 		free(left_c);

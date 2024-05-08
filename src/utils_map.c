@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:21:49 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 11:36:49 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 16:59:22 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	map_two_d(t_data *data)
 	int	i;
 
 	i = 0;
-	fd = open(MAP_PATH, O_RDONLY);
+	fd = open(data->map_path, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Failed to open file");
-		return ;
+		printf("Failed to open file");
+		exit(EXIT_FAILURE);
 	}
-	data->map.height = how_many_lines(NULL);
+	data->map.height = how_many_lines(NULL, data);
 	data->map_two_d = malloc(sizeof(char *) * (data->map.height + 1));
 	data->map_two_d[0] = get_next_line(fd);
 	while (i < data->map.height)
@@ -51,6 +51,7 @@ void	map_two_d(t_data *data)
 		i++;
 		data->map_two_d[i] = get_next_line(fd);
 	}
+	data->map_two_d[i] = NULL;
 	if (data->map.height == 0 || data->map_two_d == NULL)
 	{
 		printf("Map empty\n");

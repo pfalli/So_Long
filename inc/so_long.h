@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:40:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 13:04:45 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 17:37:06 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "../libft_full/inc/ft_printf.h"
+# include "../libft_full/inc/libft.h"
 # include "../libft_full/inc/get_next_line.h"
 # include "../minilibx-linux/mlx.h"
 # include <fcntl.h>
@@ -30,7 +31,6 @@
 # define D 100
 # define TS 40
 # define SIZE 40
-# define MAP_PATH "map/valid.ber"
 
 typedef struct s_player
 {
@@ -68,6 +68,7 @@ typedef struct s_data
 	char		*addr;
 	t_player	player;
 	t_map		map;
+	char *map_path;
 	char		**map_two_d;
 	void		*actor;
 	void		*exit;
@@ -118,8 +119,8 @@ int				wrong_elements(t_data *data);
 int				check_map_errors(t_data *data);
 
 int				close_window(t_data *data);
-int				how_many_lines(char *str);
-int				line_length(char *str);
+int				how_many_lines(char *str, t_data *data);
+int				ft_strlen_solong(const char *str);
 
 int				draw_win(t_data *data);
 void			printmove(t_data *data);

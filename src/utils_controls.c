@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:26:06 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 13:07:41 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 16:09:57 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	key_press(int keycode, t_data *data)
 			data->player.pos_y -= 1;
 		return (0);
 	}
-	move_player(data);
+	if (keycode == A || keycode == W || keycode == S || keycode == D)
+		move_player (data);
 	return (0);
 }

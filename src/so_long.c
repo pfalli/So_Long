@@ -6,22 +6,21 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:20:06 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 11:03:41 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/08 16:50:32 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-// TO DO:
-// after exit count moves
-// count moves of any keyboard clicked
-// count moves after the wall DONE
-
-int	main(void)
+int	main(int ac, char **av)
 {
+	(void)ac;
+	if(ft_strlen(av[1]) == 0)
+		return 1;
 	t_data	data;
 
 	data.mlx = mlx_init();
+	data.map_path = ft_strdup(av[1]);
 	load_texture(&data);
 	map_two_d(&data);
 	init_data(&data);

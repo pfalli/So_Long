@@ -10,7 +10,7 @@ SRC =$(addprefix src/, so_long.c \
 								utils.c )
 
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -g 
+CCFLAGS = -Wall -Werror -Wextra -g
 MLX_FLAGS = -L/usr/X11/lib -lX11 -lXext -lm
 
 LIBFT = ./libft_full/libft.a
