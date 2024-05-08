@@ -6,6 +6,7 @@ SRC =$(addprefix src/, so_long.c \
 								utils_free.c \
 								utils_map.c \
 								utils_mapcheck.c \
+								utils_mapcheck2.c \
 								utils.c )
 
 CC = cc
