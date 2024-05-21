@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:20:06 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 16:50:32 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/21 14:02:22 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	main(int ac, char **av)
 {
-	(void)ac;
-	if(ft_strlen(av[1]) == 0)
-		return 1;
 	t_data	data;
 
+	(void)ac;
+	if (ft_strlen(av[1]) == 0)
+		return (1);
 	data.mlx = mlx_init();
 	data.map_path = ft_strdup(av[1]);
 	load_texture(&data);

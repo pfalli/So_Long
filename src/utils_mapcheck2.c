@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 11:59:54 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 18:01:46 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/21 14:05:08 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int	wrong_elements(t_data *data)
 					&& data->map_two_d[y][x] != '1'
 					&& data->map_two_d[y][x] != 'E')
 				{
-					printf("data->map.width: %d\n", data->map.width - 1);
-					printf("data->map.height: %d\n", data->map.height);
 					printf("Wrong elements in Map\n");
 					exit(EXIT_FAILURE);
 				}
@@ -85,21 +83,12 @@ int	check_map_errors(t_data *data)
 	int	y;
 
 	y = 0;
-	//	wrong_elements(data);
+	wrong_elements(data);
 	closed_by_walls(data);
 	only_1_exit(data);
 	only_1_player(data);
 	atleast_1_collectible(data);
 	allocate_visited(data);
 	access_collectible(data);
-	//	while (y < data->map.height - 1)
-	//	{
-	//		if (ft_strlen_solong(data->map_two_d[y]) != data->map.width)
-	//		{
-	//			printf("Map not rectangular\n");
-	//			exit(EXIT_FAILURE);
-	//		}
-	//		y++;
-	//	}
 	return (0);
 }

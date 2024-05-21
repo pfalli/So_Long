@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:19:08 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 15:53:14 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/21 14:06:25 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	x = 0;
-	dest = (char *)malloc(((int)ft_strlen_gnl(s1) + (int)ft_strlen_gnl(s2)) + 1);
+	dest = (char *)malloc(((int)ft_strlen_gnl(s1) + (int)ft_strlen_gnl(s2))
+			+ 1);
 	if (dest == 0)
 		return (0);
 	while (s1[i])
