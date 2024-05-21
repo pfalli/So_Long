@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:40:32 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/08 17:37:06 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/21 14:13:33 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct s_data
 	char		*addr;
 	t_player	player;
 	t_map		map;
-	char *map_path;
+	char		*map_path;
 	char		**map_two_d;
 	void		*actor;
 	void		*exit;
