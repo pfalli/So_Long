@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:23:03 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/21 14:02:37 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/23 09:57:14 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int	atleast_1_collectible(t_data *data)
 	}
 	return (0);
 }
-
+// MAP CHECKER
 void	is_exit_accessible(t_data *data, int x, int y)
 {
 	if (data->map_two_d[y][x] == '1' || y < 0 || x < 0 || x >= data->map.width
@@ -134,7 +134,14 @@ void	is_exit_accessible(t_data *data, int x, int y)
 		return ;
 	data->visited[y][x] = 1;
 	if (data->map_two_d[y][x] == 'E')
+	{
 		data->exit_accessible = 1;
+		if (data->collectible_count != data->collectible_accessible)
+		{
+			printf("All collectible are not accessible.\n");
+			exit(EXIT_FAILURE);
+		}
+	}
 	if (data->map_two_d[y][x] == 'C')
 		data->collectible_accessible++;
 	is_exit_accessible(data, x - 1, y);

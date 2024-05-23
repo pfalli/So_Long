@@ -6,7 +6,7 @@
 /*   By: pfalli <pfalli@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 11:59:54 by pfalli            #+#    #+#             */
-/*   Updated: 2024/05/21 14:05:08 by pfalli           ###   ########.fr       */
+/*   Updated: 2024/05/21 16:34:30 by pfalli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int	check_map_errors(t_data *data)
 	only_1_player(data);
 	atleast_1_collectible(data);
 	allocate_visited(data);
-	access_collectible(data);
+	// access_collectible(data);
 	return (0);
 }
