@@ -24,6 +24,7 @@ This is a simple game built using the MiniLibX library. Follow the instructions 
 To run the game, use the following command:  ./so_long ""map/ one of the maps inside the map directory"
 ```sh
 ./so_long map/valid1.ber
+```
 
 ## Issues
 
