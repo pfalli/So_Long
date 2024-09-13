@@ -18,12 +18,14 @@ LIBFT_PATH = ./libft_full
 MLX_DIR = ./minilibx-linux
 MLX = ./minilibx-linux/libmlx.a
 
+# X11_LIBS = -L/usr/lib/X11 -lXext -lX11 "to link minilibx on my laptop"
+
 all: $(NAME)
 
 $(NAME):
 	@make -C $(MLX_DIR)
 	@make -C $(LIBFT_PATH)
-	$(CC) $(CCFLAGS) $(MLX_FLAGS) -o $(NAME) $(SRC) $(LIBFT) $(MLX)
+	$(CC) $(CCFLAGS) $(MLX_FLAGS) -o $(NAME) $(SRC) $(LIBFT) $(MLX) # $(X11_LIBS)
 # now libft works
 
 clean:
