@@ -30,3 +30,7 @@ To run the game, use the following command:  ./so_long ""map/ one of the maps in
 
 When creating the map, at the end of each single line, when pressing "Enter", it prints a "\n" new_line. For this reason i was
 getting problems with reading and with the map_checker.
+
+## To do list
+
+Block the player after reaching the door without the objects. It continues moving to the direction.
