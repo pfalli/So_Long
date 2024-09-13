@@ -124,5 +124,6 @@ int				ft_strlen_solong(const char *str);
 
 int				draw_win(t_data *data);
 void			printmove(t_data *data);
+void			print_map_debug(t_data *data);
 
 #endif

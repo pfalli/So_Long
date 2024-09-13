@@ -31,31 +31,77 @@ int	load_texture(t_data *data)
 	return (0);
 }
 
-void	map_two_d(t_data *data)
-{
-	int	fd;
-	int	i;
+//	void	map_two_d(t_data *data)
+//	{
+//		int	fd;
+//		int	i;
+//	
+//		i = 0;
+//		fd = open(data->map_path, O_RDONLY);
+//		if (fd < 0)
+//		{
+//			printf("Failed to open file");
+//			exit(EXIT_FAILURE);
+//		}
+//		data->map.height = how_many_lines(NULL, data);
+//		data->map_two_d = malloc(sizeof(char *) * (data->map.height + 1));
+//		data->map_two_d[0] = get_next_line(fd);
+//		while (i < data->map.height)
+//		{
+//			i++;
+//			data->map_two_d[i] = get_next_line(fd);
+//		}
+//		data->map_two_d[i] = NULL;
+//		if (data->map.height == 0 || data->map_two_d == NULL)
+//		{
+//			printf("Map empty\n");
+//			exit(EXIT_FAILURE);
+//		}
+//		close(fd);
+//	}
 
-	i = 0;
-	fd = open(data->map_path, O_RDONLY);
-	if (fd < 0)
-	{
-		printf("Failed to open file");
-		exit(EXIT_FAILURE);
-	}
-	data->map.height = how_many_lines(NULL, data);
-	data->map_two_d = malloc(sizeof(char *) * (data->map.height + 1));
-	data->map_two_d[0] = get_next_line(fd);
-	while (i < data->map.height)
-	{
-		i++;
-		data->map_two_d[i] = get_next_line(fd);
-	}
-	data->map_two_d[i] = NULL;
-	if (data->map.height == 0 || data->map_two_d == NULL)
-	{
-		printf("Map empty\n");
-		exit(EXIT_FAILURE);
-	}
-	close(fd);
+void map_two_d(t_data *data)
+{
+    int fd;
+    int i;
+
+    i = 0;
+    fd = open(data->map_path, O_RDONLY);
+    if (fd < 0)
+    {
+        printf("Failed to open file");
+        exit(EXIT_FAILURE);
+    }
+    data->map.height = how_many_lines(NULL, data);
+    data->map_two_d = malloc(sizeof(char *) * (data->map.height + 1));
+    if (!data->map_two_d)
+    {
+        perror("Error allocating memory");
+        exit(EXIT_FAILURE);
+    }
+
+    while (i < data->map.height)
+    {
+        char *line = get_next_line(fd);
+        if (line)
+        {
+            // Remove newline character if present
+            line[strcspn(line, "\n")] = '\0';
+            data->map_two_d[i] = line;
+        }
+        else
+        {
+            data->map_two_d[i] = NULL;
+        }
+        i++;
+    }
+    data->map_two_d[i] = NULL;
+
+    if (data->map.height == 0 || data->map_two_d == NULL)
+    {
+        printf("Map empty\n");
+        exit(EXIT_FAILURE);
+    }
+    close(fd);
 }
+

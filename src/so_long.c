@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	load_texture(&data);
 	map_two_d(&data);
 	init_data(&data);
+	print_map_debug(&data);
 	check_map_errors(&data);
 	data.win = mlx_new_window(data.mlx, data.map.width * SIZE - 1,
 			data.map.height * SIZE, "Sotomayor");

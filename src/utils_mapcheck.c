@@ -12,33 +12,57 @@
 
 #include "../inc/so_long.h"
 
-void	closed_by_walls(t_data *data)
+void closed_by_walls(t_data *data)
 {
-	int	y;
-	int	x;
+    int y;
+    int x;
 
-	y = 0;
-	x = 0;
-	while (x < data->map.width)
-	{
-		if (data->map_two_d[0][x] != '1' || data->map_two_d[data->map.height
-			- 1][x] != '1')
-		{
-			printf("Map not closed by walls horizontal\n");
-			exit(EXIT_FAILURE);
-		}
-		x++;
-	}
-	while (y < data->map.height)
-	{
-		if (data->map_two_d[y][0] != '1' || data->map_two_d[y][data->map.width
-			- 1] != '1')
-		{
-			printf("Map not closed by wall vertical \n");
-			exit(EXIT_FAILURE);
-		}
-		y++;
-	}
+    y = 0;
+    x = 0;
+    // Check the top row
+    while (x < data->map.width)
+    {
+        if (data->map_two_d[0][x] != '1')
+        {
+            printf("Top row not closed at column %d\n", x);
+            printf("Character found: %c\n", data->map_two_d[0][x]);
+            printf("Map not closed by walls horizontal\n");
+            exit(EXIT_FAILURE);
+        }
+        x++;
+    }
+    // Check the bottom row
+    x = 0;
+    while (x < data->map.width)
+    {
+        if (data->map_two_d[data->map.height - 1][x] != '1')
+        {
+            printf("Bottom row not closed at column %d\n", x);
+            printf("Character found: %c\n", data->map_two_d[data->map.height - 1][x]);
+            printf("Map not closed by walls horizontal\n");
+            exit(EXIT_FAILURE);
+        }
+        x++;
+    }
+    // Check the left and right columns
+    while (y < data->map.height)
+    {
+        if (data->map_two_d[y][0] != '1')
+        {
+            printf("Left column not closed at row %d\n", y);
+            printf("Character found: %c\n", data->map_two_d[y][0]);
+            printf("Map not closed by wall vertical\n");
+            exit(EXIT_FAILURE);
+        }
+        if (data->map_two_d[y][data->map.width - 1] != '1')
+        {
+            printf("Right column not closed at row %d\n", y);
+            printf("Character found: %c\n", data->map_two_d[y][data->map.width - 1]);
+            printf("Map not closed by wall vertical\n");
+            exit(EXIT_FAILURE);
+        }
+        y++;
+    }
 }
 
 void	only_1_exit(t_data *data)

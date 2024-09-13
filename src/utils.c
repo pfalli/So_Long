@@ -91,3 +91,12 @@ void	printmove(t_data *data)
 	data->moves++;
 	printf("Moves: %d\n", data->moves);
 }
+
+void print_map_debug(t_data *data)
+{
+    printf("Map width: %d, Map height: %d\n", data->map.width, data->map.height);
+    for (int i = 0; i < data->map.height; i++)
+    {
+        printf("%s\n", data->map_two_d[i]);
+    }
+}

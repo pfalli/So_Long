@@ -80,15 +80,12 @@ int	wrong_elements(t_data *data)
 
 int	check_map_errors(t_data *data)
 {
-	int	y;
-
-	y = 0;
 	wrong_elements(data);
 	closed_by_walls(data);
 	only_1_exit(data);
 	only_1_player(data);
 	atleast_1_collectible(data);
 	allocate_visited(data);
-	// access_collectible(data);
+	access_collectible(data);
 	return (0);
 }
