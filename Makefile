@@ -42,3 +42,4 @@ re : fclean all
 
 # gcc so_long.c -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 # valgrind --leak-check=full --show-leak-kinds=all
+
