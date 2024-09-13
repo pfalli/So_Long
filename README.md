@@ -33,4 +33,5 @@ getting problems with reading and with the map_checker.
 
 ## To do list
 
-Block the player after reaching the door without the objects. It continues moving to the direction.
+1. Block the player after reaching the door without the objects. It continues moving to the direction.
+2. Add sprites
